@@ -11,9 +11,9 @@ function dump(x) {
 
 function parse(stage, text) {
 	if ( stage === 'cst' ) {
-		return P.parseCst(text).fmap(dump).mapError(dump); // .value;
+		return P.parseCst(text).fmap(dump).mapError(dump);
 	} else if ( stage === 'ast' ) {
-		return P.parseAst(text).fmap(P.ast.dump).mapError(dump); // .value;
+		return P.parseAst(text).fmap(dump).mapError(dump);
 	} else {
 		throw new Error('invalid stage -- can only be "cst" or "ast", was ' + stage);
 	}
