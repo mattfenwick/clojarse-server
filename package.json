@@ -1,0 +1,27 @@
+{
+  "name": "clojarse-server",
+  "version": "0.0.1",
+  "description": "a server for parsing Clojure code and returning an AST as JSON",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mattfenwick/clojarse-server.git"
+  },
+  "keywords": [
+    "Clojure"
+  ],
+  "author": "Matt Fenwick",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mattfenwick/clojarse-server/issues"
+  },
+  "homepage": "https://github.com/mattfenwick/clojarse-server#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "clojarse-js": "^0.2.0",
+    "express": "^4.16.2"
+  }
+}
