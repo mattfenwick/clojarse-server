@@ -11,9 +11,9 @@ function dump(x) {
 
 function parse(stage, text) {
 	if ( stage === 'cst' ) {
-		return P.parseCst(text).fmap(dump).mapError(dump);
+		return P.parseCst(text);
 	} else if ( stage === 'ast' ) {
-		return P.parseAst(text).fmap(dump).mapError(dump);
+		return P.parseAst(text);
 	} else {
 		throw new Error('invalid stage -- can only be "cst" or "ast", was ' + stage);
 	}
@@ -33,7 +33,7 @@ app.get('/parse', function(req, res) {
 	if ( !text ) {
 		throw new Error('missing text -- this should be an http error code of some kind TODO!');
 	}
-	res.send(parse('ast', text));
+	res.send(dump(parse('ast', text)));
 });
 
 app.post('/parse', function(req, res) {
@@ -41,7 +41,7 @@ app.post('/parse', function(req, res) {
 	if ( !text ) {
 		throw new Error('missing text -- this should be an http error code of some kind TODO!');
 	}
-	res.send(parse('ast', text));
+	res.send(dump(parse('ast', text)));
 });
 
 

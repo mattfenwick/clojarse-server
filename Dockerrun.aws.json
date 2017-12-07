@@ -1,7 +1,7 @@
 {
   "AWSEBDockerrunVersion": "1",
   "Image": {
-    "Name": "mfenwickbd/clojarse-server:0.0.1",
+    "Name": "mfenwickbd/clojarse-server:0.0.2",
     "Update": "true"
   },
   "Ports": [
